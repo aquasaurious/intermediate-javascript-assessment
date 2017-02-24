@@ -42,7 +42,6 @@ function noWeakLink() {
     url: '/api/users'  
   }).then(function(response){
       firstUser = response.data[0];
-      return noWeakLink();
   }).then(function(response){
       thirdUser = response.data[2];
       return response.data[9]; 
@@ -143,9 +142,9 @@ function accountingOffice(assets) {
 
 function forgetter(name) {
   function rememberall(item) {
-    return {item.remember.push(name)};
+    return {"name": name, "remember": [item]};
   }
-  return rememberall()
+  return rememberall;
 }
 
 
